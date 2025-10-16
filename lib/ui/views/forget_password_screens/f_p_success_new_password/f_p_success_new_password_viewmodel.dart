@@ -1,15 +1,12 @@
 import 'package:bazar/app/app.locator.dart';
 import 'package:bazar/app/app.router.dart';
-import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class PageViewViewModel extends BaseViewModel {
-  PageController pageController = PageController();
-
+class FPSuccessNewPasswordViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
-  void goToSignIn() {
-    _navigationService.navigateToSignInView();
+  void goToSignInPage() {
+    _navigationService.replaceWithSignInView();
   }
 }

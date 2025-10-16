@@ -23,9 +23,10 @@ class OnboardingIView extends StackedView<OnboardingIViewModel> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset("assets/img/unboarding_frame_1.png"),
-            verticalSpaceMedium,
+            verticalSpaceTiny,
             Text(
               "Now reading books\nwill be easier",
+              textScaler: const TextScaler.linear(0.86),
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 fontSize: 30,
@@ -36,6 +37,7 @@ class OnboardingIView extends StackedView<OnboardingIViewModel> {
             verticalSpaceTiny,
             Text(
               textAlign: TextAlign.center,
+              textScaler: const TextScaler.linear(0.86),
               " Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.",
               style: GoogleFonts.poppins(fontSize: 14, color: gray200),
             ),

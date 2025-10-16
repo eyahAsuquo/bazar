@@ -26,6 +26,7 @@ class OnboardingIIIView extends StackedView<OnboardingIIIViewModel> {
             verticalSpaceMedium,
             Text(
               "Start Your Adventure",
+              textScaler: const TextScaler.linear(0.86),
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 fontSize: 30,
@@ -36,6 +37,7 @@ class OnboardingIIIView extends StackedView<OnboardingIIIViewModel> {
             verticalSpaceTiny,
             Text(
               textAlign: TextAlign.center,
+              textScaler: const TextScaler.linear(0.86),
               "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!",
               style: GoogleFonts.poppins(fontSize: 14, color: gray200),
             ),

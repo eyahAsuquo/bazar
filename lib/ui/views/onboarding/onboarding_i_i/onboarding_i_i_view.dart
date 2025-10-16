@@ -25,7 +25,8 @@ class OnboardingIIView extends StackedView<OnboardingIIViewModel> {
             Image.asset("assets/img/unboarding_frame_2.png"),
             verticalSpaceMedium,
             Text(
-              "Your Bookish Soulmate\nAwaits",
+              "Your Bookish\nSoulmate Awaits",
+              textScaler: const TextScaler.linear(0.86),
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 fontSize: 30,
@@ -36,6 +37,7 @@ class OnboardingIIView extends StackedView<OnboardingIIViewModel> {
             verticalSpaceTiny,
             Text(
               textAlign: TextAlign.center,
+              textScaler: const TextScaler.linear(0.86),
               "Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.",
               style: GoogleFonts.poppins(fontSize: 14, color: gray200),
             ),
