@@ -20,125 +20,139 @@ class ForgetPasswordView extends StackedView<ForgetPasswordViewModel> {
       appBar: AppBar(),
       backgroundColor: offwhite,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Forget Password",
-                style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-              verticalSpaceTiny,
-              Text(
-                "Select whic contact details should we use to reset your password",
-                style: GoogleFonts.poppins(
-                  fontSize: 14,
-                ),
-              ),
-              verticalSpaceMedium,
-              Row(
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {},
-                      borderRadius: BorderRadius.circular(12),
-                      highlightColor: primaryColor,
-                      splashColor: const Color.fromARGB(36, 53, 35, 104),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 30, horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(101, 238, 236, 236),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: primaryColor),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Icon(
-                              Icons.email,
-                              color: primaryColor,
-                            ),
-                            verticalSpace(20),
-                            Text(
-                              "Email",
-                              style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            verticalSpaceTiny,
-                            Text(
-                              "Send to your email",
-                              style: GoogleFonts.poppins(
-                                fontSize: 11,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  horizontalSpaceMedium,
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {},
-                      borderRadius: BorderRadius.circular(12),
-                      highlightColor: primaryColor,
-                      splashColor: const Color.fromARGB(36, 53, 35, 104),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 30, horizontal: 12),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(101, 238, 236, 236),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: primaryColor),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Icon(
-                              Icons.phone,
-                              color: primaryColor,
-                            ),
-                            verticalSpace(20),
-                            Text(
-                              "Phone Number",
-                              style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            verticalSpaceTiny,
-                            Text(
-                              "Send to your phone",
-                              style: GoogleFonts.poppins(
-                                fontSize: 11,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              verticalSpaceLarge,
-              Button(
-                onPressed: () => viewModel.goToFPWEmaile(),
-                buttonContent: Text(
-                  "Continue",
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Forget Password",
                   style: GoogleFonts.poppins(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                 ),
-              ),
-            ],
+                verticalSpaceTiny,
+                Text(
+                  "Select which contact details should we use to reset your password",
+                  style: GoogleFonts.poppins(
+                    fontSize: 14,
+                  ),
+                ),
+                verticalSpaceMedium,
+                Row(
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: () => viewModel.selectOption("email"),
+                        borderRadius: BorderRadius.circular(12),
+                        splashColor: const Color.fromARGB(36, 53, 35, 104),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 12),
+                          decoration: BoxDecoration(
+                            color: viewModel.selectedOption == "email"
+                                ? const Color.fromARGB(75, 53, 35, 104)
+                                : const Color.fromARGB(80, 238, 236, 236),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border(
+                              bottom: BorderSide(
+                                  color: viewModel.selectedOption == "email"
+                                      ? primaryColor
+                                      : Colors.transparent),
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Icon(
+                                Icons.email,
+                                color: primaryColor,
+                              ),
+                              verticalSpace(20),
+                              Text(
+                                "Email",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              verticalSpaceTiny,
+                              Text(
+                                "Send to your email",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 11,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    horizontalSpaceMedium,
+                    Expanded(
+                      child: InkWell(
+                        onTap: () => viewModel.selectOption("phone"),
+                        borderRadius: BorderRadius.circular(12),
+                        splashColor: const Color.fromARGB(36, 53, 35, 104),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 12),
+                          decoration: BoxDecoration(
+                            color: viewModel.selectedOption == "phone"
+                                ? const Color.fromARGB(75, 53, 35, 104)
+                                : const Color.fromARGB(80, 238, 236, 236),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border(
+                              bottom: BorderSide(
+                                  color: viewModel.selectedOption == "phone"
+                                      ? primaryColor
+                                      : Colors.transparent),
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Icon(
+                                Icons.phone,
+                                color: primaryColor,
+                              ),
+                              verticalSpace(20),
+                              Text(
+                                "Phone Number",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              verticalSpaceTiny,
+                              Text(
+                                "Send to your phone",
+                                style: GoogleFonts.poppins(
+                                  fontSize: 11,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                verticalSpaceLarge,
+                Button(
+                  onPressed: () => viewModel.handleContinue(context),
+                  buttonContent: Text(
+                    "Continue",
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -28,5 +28,6 @@ const Color green = Colors.green;
 const Color blue = Colors.blue;
 const Color orange = Colors.orange;
 const Color yellow = Colors.yellow;
+const Color red = Colors.red;
 const Color kcLightGrey = Color.fromARGB(255, 187, 187, 187);
 const Color kcVeryLightGrey = Color(0xFFE3E3E3);

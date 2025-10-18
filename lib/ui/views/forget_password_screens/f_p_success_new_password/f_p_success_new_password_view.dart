@@ -22,35 +22,37 @@ class FPSuccessNewPasswordView
         automaticallyImplyLeading: false,
       ),
       backgroundColor: offwhite,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/img/congratulation_logo.png"),
-            verticalSpaceLarge,
-            Text(
-              "Password Changed!",
-              style: GoogleFonts.poppins(
-                  fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            verticalSpaceSmall,
-            Text(
-              textAlign: TextAlign.center,
-              "Password chnaged successfully, you can login agin with a new password",
-              style: GoogleFonts.poppins(
-                fontSize: 14,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/img/congratulation_logo.png"),
+              verticalSpaceLarge,
+              Text(
+                "Password Changed!",
+                style: GoogleFonts.poppins(
+                    fontSize: 20, fontWeight: FontWeight.bold),
               ),
-            ),
-            verticalSpaceLarge,
-            Button(
-              onPressed: () => viewModel.goToSignInPage(),
-              buttonContent: Text(
-                "Login",
-                style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+              verticalSpaceSmall,
+              Text(
+                textAlign: TextAlign.center,
+                "Password chnaged successfully, you can login agin with a new password",
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                ),
               ),
-            ),
-          ],
+              verticalSpaceLarge,
+              Button(
+                onPressed: () => viewModel.goToSignInPage(),
+                buttonContent: Text(
+                  "Login",
+                  style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

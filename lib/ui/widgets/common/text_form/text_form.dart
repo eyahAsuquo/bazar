@@ -7,7 +7,7 @@ class TextForm extends StackedView<TextFormModel> {
   const TextForm(
       {required this.hintText,
       required this.obscureText,
-      required this.keyboardType,
+      this.keyboardType,
       required this.controler,
       this.validator,
       this.suffixIcon,
@@ -15,7 +15,7 @@ class TextForm extends StackedView<TextFormModel> {
 
   final String hintText;
   final bool obscureText;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
   final TextEditingController controler;
   final FormFieldValidator? validator;
   final Widget? suffixIcon;
@@ -29,6 +29,7 @@ class TextForm extends StackedView<TextFormModel> {
     return TextFormField(
       validator: validator,
       obscureText: obscureText,
+      controller: controler,
       decoration: InputDecoration(
           suffixIcon: suffixIcon,
           hintText: hintText,

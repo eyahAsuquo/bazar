@@ -22,6 +22,7 @@ class PageViewView extends StackedView<PageViewViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: offwhite,
       body: SafeArea(
         minimum: const EdgeInsets.only(top: 50),

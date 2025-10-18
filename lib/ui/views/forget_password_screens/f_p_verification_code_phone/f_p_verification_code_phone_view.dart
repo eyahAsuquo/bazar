@@ -22,70 +22,72 @@ class FPVerificationCodePhoneView
     return Scaffold(
       appBar: AppBar(),
       backgroundColor: offwhite,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-        child: Column(
-          children: [
-            Text(
-              "Verification Code",
-              style: GoogleFonts.poppins(
-                  fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            verticalSpaceSmall,
-            Text(
-              textAlign: TextAlign.center,
-              "Please enter the code we just sent to to your phone number (+234) 708 108 4796",
-              style: GoogleFonts.poppins(
-                fontSize: 14,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+          child: Column(
+            children: [
+              Text(
+                "Verification Code",
+                style: GoogleFonts.poppins(
+                    fontSize: 20, fontWeight: FontWeight.bold),
               ),
-            ),
-            verticalSpaceLarge,
-            Pinput(
-              defaultPinTheme: PinTheme(
-                width: 50,
-                height: 55,
-                margin: const EdgeInsets.symmetric(horizontal: 8),
-                textStyle: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: gray50),
-                ),
-              ),
-              focusedPinTheme: PinTheme(
-                width: 50,
-                height: 55,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: primaryColor),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-            ),
-            verticalSpaceSmall,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("If you didn't receive a code?"),
-                ButtonText(
-                  onPressed: () {},
-                  text: "Resend",
+              verticalSpaceSmall,
+              Text(
+                textAlign: TextAlign.center,
+                "Please enter the code we just sent to to your phone number (+234) 708 108 4796",
+                style: GoogleFonts.poppins(
                   fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  textColor: primaryColor,
                 ),
-              ],
-            ),
-            verticalSpaceMedium,
-            Button(
-              onPressed: () => viewModel.goToFPNewPasswordPage(),
-              buttonContent: Text(
-                "Continue",
-                style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
               ),
-            ),
-          ],
+              verticalSpaceLarge,
+              Pinput(
+                defaultPinTheme: PinTheme(
+                  width: 50,
+                  height: 55,
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  textStyle: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: gray50),
+                  ),
+                ),
+                focusedPinTheme: PinTheme(
+                  width: 50,
+                  height: 55,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 2, color: primaryColor),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
+              verticalSpaceSmall,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("If you didn't receive a code?"),
+                  ButtonText(
+                    onPressed: () {},
+                    text: "Resend",
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    textColor: primaryColor,
+                  ),
+                ],
+              ),
+              verticalSpaceMedium,
+              Button(
+                onPressed: () => viewModel.goToFPNewPasswordPage(),
+                buttonContent: Text(
+                  "Continue",
+                  style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

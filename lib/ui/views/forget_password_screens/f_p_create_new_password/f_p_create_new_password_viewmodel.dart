@@ -20,6 +20,10 @@ class FPCreateNewPasswordViewModel extends BaseViewModel {
   }
 
   void goToFPSuccessPage() {
-    _navigationService.replaceWithFPSuccessNewPasswordView();
+    if (formKey.currentState!.validate()) {
+      _navigationService.replaceWithFPSuccessNewPasswordView();
+    } else {
+      return;
+    }
   }
 }

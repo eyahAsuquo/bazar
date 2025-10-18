@@ -18,35 +18,37 @@ class SuccessView extends StackedView<SuccessViewModel> {
   ) {
     return Scaffold(
       backgroundColor: offwhite,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/img/congratulation_logo.png"),
-            verticalSpaceLarge,
-            Text(
-              "Congratulations!",
-              style: GoogleFonts.poppins(
-                  fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            verticalSpaceSmall,
-            Text(
-              textAlign: TextAlign.center,
-              "your account is complete, please enjoy the best menu from us",
-              style: GoogleFonts.poppins(
-                fontSize: 14,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/img/congratulation_logo.png"),
+              verticalSpaceLarge,
+              Text(
+                "Congratulations!",
+                style: GoogleFonts.poppins(
+                    fontSize: 20, fontWeight: FontWeight.bold),
               ),
-            ),
-            verticalSpaceLarge,
-            Button(
-              onPressed: () => viewModel.goToHomePage(),
-              buttonContent: Text(
-                "Get Started",
-                style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+              verticalSpaceSmall,
+              Text(
+                textAlign: TextAlign.center,
+                "your account is complete, please enjoy the best menu from us",
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                ),
               ),
-            ),
-          ],
+              verticalSpaceLarge,
+              Button(
+                onPressed: () => viewModel.goToHomePage(),
+                buttonContent: Text(
+                  "Get Started",
+                  style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

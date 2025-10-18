@@ -20,7 +20,11 @@ class SignUpViewModel extends BaseViewModel {
   }
 
   void goToEmailVerificationPage() {
-    _navigationService.navigateToEmailVerificationView();
+    if (formKey.currentState!.validate()) {
+      _navigationService.navigateToEmailVerificationView();
+    } else {
+      return;
+    }
   }
 
   void goToLogInPage() {

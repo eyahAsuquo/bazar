@@ -19,7 +19,11 @@ class SignInViewModel extends BaseViewModel {
   }
 
   void goToHomePage() {
-    _navigationService.replaceWithHomeView();
+    if (formKey.currentState!.validate()) {
+      _navigationService.replaceWithHomeView();
+    } else {
+      return;
+    }
   }
 
   void goToSignUpPage() {
