@@ -5,6 +5,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:bazar/ui/views/author/author_view.dart' as _i22;
+import 'package:bazar/ui/views/authors/authors_view.dart' as _i21;
 import 'package:bazar/ui/views/email_verification/email_verification_view.dart'
     as _i9;
 import 'package:bazar/ui/views/forget_password_screens/f_p_create_new_password/f_p_create_new_password_view.dart'
@@ -36,10 +38,11 @@ import 'package:bazar/ui/views/phone_verification/phone_verification_view.dart'
 import 'package:bazar/ui/views/sign_in/sign_in_view.dart' as _i7;
 import 'package:bazar/ui/views/sign_up/sign_up_view.dart' as _i8;
 import 'package:bazar/ui/views/success/success_view.dart' as _i12;
-import 'package:flutter/material.dart' as _i20;
+import 'package:bazar/ui/views/vendors/vendors_view.dart' as _i20;
+import 'package:flutter/material.dart' as _i23;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i21;
+import 'package:stacked_services/stacked_services.dart' as _i24;
 
 class Routes {
   static const homeView = '/home-view';
@@ -78,6 +81,12 @@ class Routes {
 
   static const fPSuccessNewPasswordView = '/f-psuccess-new-password-view';
 
+  static const vendorsView = '/vendors-view';
+
+  static const authorsView = '/authors-view';
+
+  static const authorView = '/author-view';
+
   static const all = <String>{
     homeView,
     onboardingIView,
@@ -97,6 +106,9 @@ class Routes {
     fPVerificationCodePhoneView,
     fPCreateNewPasswordView,
     fPSuccessNewPasswordView,
+    vendorsView,
+    authorsView,
+    authorView,
   };
 }
 
@@ -174,114 +186,148 @@ class StackedRouter extends _i1.RouterBase {
       Routes.fPSuccessNewPasswordView,
       page: _i19.FPSuccessNewPasswordView,
     ),
+    _i1.RouteDef(
+      Routes.homeView,
+      page: _i2.HomeView,
+    ),
+    _i1.RouteDef(
+      Routes.vendorsView,
+      page: _i20.VendorsView,
+    ),
+    _i1.RouteDef(
+      Routes.authorsView,
+      page: _i21.AuthorsView,
+    ),
+    _i1.RouteDef(
+      Routes.authorView,
+      page: _i22.AuthorView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.OnboardingIView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.OnboardingIView(),
         settings: data,
       );
     },
     _i4.OnboardingIIView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OnboardingIIView(),
         settings: data,
       );
     },
     _i5.OnboardingIIIView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.OnboardingIIIView(),
         settings: data,
       );
     },
     _i6.PageViewView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.PageViewView(),
         settings: data,
       );
     },
     _i7.SignInView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SignInView(),
         settings: data,
       );
     },
     _i8.SignUpView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.SignUpView(),
         settings: data,
       );
     },
     _i9.EmailVerificationView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.EmailVerificationView(),
         settings: data,
       );
     },
     _i10.PhoneVerificationView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.PhoneVerificationView(),
         settings: data,
       );
     },
     _i11.InputPhoneNumberView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.InputPhoneNumberView(),
         settings: data,
       );
     },
     _i12.SuccessView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.SuccessView(),
         settings: data,
       );
     },
     _i13.ForgetPasswordView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.ForgetPasswordView(),
         settings: data,
       );
     },
     _i14.FPWEmailView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.FPWEmailView(),
         settings: data,
       );
     },
     _i15.FPWPhoneView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.FPWPhoneView(),
         settings: data,
       );
     },
     _i16.FPVerificationCodeEmailView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.FPVerificationCodeEmailView(),
         settings: data,
       );
     },
     _i17.FPVerificationCodePhoneView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.FPVerificationCodePhoneView(),
         settings: data,
       );
     },
     _i18.FPCreateNewPasswordView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.FPCreateNewPasswordView(),
         settings: data,
       );
     },
     _i19.FPSuccessNewPasswordView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i23.MaterialPageRoute<dynamic>(
         builder: (context) => const _i19.FPSuccessNewPasswordView(),
+        settings: data,
+      );
+    },
+    _i20.VendorsView: (data) {
+      return _i23.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i20.VendorsView(),
+        settings: data,
+      );
+    },
+    _i21.AuthorsView: (data) {
+      return _i23.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i21.AuthorsView(),
+        settings: data,
+      );
+    },
+    _i22.AuthorView: (data) {
+      return _i23.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i22.AuthorView(),
         settings: data,
       );
     },
@@ -294,7 +340,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i21.NavigationService {
+extension NavigatorStateExtension on _i24.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -547,6 +593,48 @@ extension NavigatorStateExtension on _i21.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToVendorsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.vendorsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToAuthorsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.authorsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToAuthorView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.authorView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -793,6 +881,48 @@ extension NavigatorStateExtension on _i21.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.fPSuccessNewPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithVendorsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.vendorsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAuthorsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.authorsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAuthorView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.authorView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

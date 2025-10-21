@@ -21,6 +21,9 @@ import 'package:bazar/ui/views/forget_password_screens/f_p_verification_code_ema
 import 'package:bazar/ui/views/forget_password_screens/f_p_verification_code_phone/f_p_verification_code_phone_view.dart';
 import 'package:bazar/ui/views/forget_password_screens/f_p_create_new_password/f_p_create_new_password_view.dart';
 import 'package:bazar/ui/views/forget_password_screens/f_p_success_new_password/f_p_success_new_password_view.dart';
+import 'package:bazar/ui/views/vendors/vendors_view.dart';
+import 'package:bazar/ui/views/authors/authors_view.dart';
+import 'package:bazar/ui/views/author/author_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -44,6 +47,10 @@ import 'package:bazar/ui/views/forget_password_screens/f_p_success_new_password/
     MaterialRoute(page: FPVerificationCodePhoneView),
     MaterialRoute(page: FPCreateNewPasswordView),
     MaterialRoute(page: FPSuccessNewPasswordView),
+    MaterialRoute(page: HomeView),
+    MaterialRoute(page: VendorsView),
+    MaterialRoute(page: AuthorsView),
+    MaterialRoute(page: AuthorView),
 // @stacked-route
   ],
   dependencies: [
