@@ -91,13 +91,19 @@ class HomeView extends StackedView<HomeViewModel> {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
+                          GestureDetector(
+                            onTap: () => viewModel.showBookBottomSheet(
+                                book.id, book.price, context),
+                            child: Container(
                               padding: const EdgeInsets.all(8),
                               height: 200,
                               child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                      fit: BoxFit.contain, book.image))),
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                    fit: BoxFit.contain, book.image),
+                              ),
+                            ),
+                          ),
                           Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 8,
@@ -136,7 +142,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () => viewModel.goToVendorsScreen(),
                     child: Text(
                       "See all",
                       style: GoogleFonts.poppins(
@@ -210,7 +216,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () => viewModel.goToAuthorsScreen(),
                     child: Text(
                       "See all",
                       style: GoogleFonts.poppins(

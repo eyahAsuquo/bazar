@@ -24,11 +24,14 @@ import 'package:bazar/ui/views/forget_password_screens/f_p_success_new_password/
 import 'package:bazar/ui/views/vendors/vendors_view.dart';
 import 'package:bazar/ui/views/authors/authors_view.dart';
 import 'package:bazar/ui/views/author/author_view.dart';
+import 'package:bazar/ui/views/tabBar_views/all_vendor/all_vendor_view.dart';
+
+import 'package:bazar/ui/views/tabBar_views/all_authors_tab/all_authors_tab_view.dart';
 // @stacked-import
 
 @StackedApp(
   routes: [
-    MaterialRoute(page: HomeView),
+    // MaterialRoute(page: HomeView),
 
     MaterialRoute(page: OnboardingIView),
     MaterialRoute(page: OnboardingIIView),
@@ -51,6 +54,9 @@ import 'package:bazar/ui/views/author/author_view.dart';
     MaterialRoute(page: VendorsView),
     MaterialRoute(page: AuthorsView),
     MaterialRoute(page: AuthorView),
+    MaterialRoute(page: AllVendorView),
+
+    MaterialRoute(page: AllAuthorsTabView),
 // @stacked-route
   ],
   dependencies: [

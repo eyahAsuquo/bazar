@@ -9,6 +9,7 @@ class Book {
   RatingBarIndicator review;
   String category;
   double price;
+  String? vendor;
 
   Book({
     required this.id,
@@ -19,5 +20,6 @@ class Book {
     required this.review,
     required this.category,
     required this.price,
+    this.vendor,
   });
 }
