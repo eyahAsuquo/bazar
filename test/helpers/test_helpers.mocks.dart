@@ -6,6 +6,10 @@
 import 'dart:async' as _i5;
 import 'dart:ui' as _i6;
 
+import 'package:bazar/services/author_service.dart' as _i10;
+import 'package:bazar/services/book_service.dart' as _i8;
+
+import 'package:bazar/ui/models/book_model.dart' as _i9;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
@@ -682,3 +686,24 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
         returnValueForMissingStub: null,
       );
 }
+
+/// A class which mocks [BookServiceService].
+///
+/// See the documentation for Mockito's code generation for more information.
+
+/// A class which mocks [BookService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockBookService extends _i1.Mock implements _i8.BookService {
+  @override
+  List<_i9.Book> get books => (super.noSuchMethod(
+        Invocation.getter(#books),
+        returnValue: <_i9.Book>[],
+        returnValueForMissingStub: <_i9.Book>[],
+      ) as List<_i9.Book>);
+}
+
+/// A class which mocks [AuthorService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAuthorService extends _i1.Mock implements _i10.AuthorService {}

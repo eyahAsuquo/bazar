@@ -2,6 +2,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:bazar/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
+
+import 'package:bazar/services/book_service.dart';
+import 'package:bazar/services/author_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -12,14 +15,20 @@ import 'test_helpers.mocks.dart';
     MockSpec<NavigationService>(onMissingStub: OnMissingStub.returnDefault),
     MockSpec<BottomSheetService>(onMissingStub: OnMissingStub.returnDefault),
     MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
-    // @stacked-mock-spec
+
+    MockSpec<BookService>(onMissingStub: OnMissingStub.returnDefault),
+    MockSpec<AuthorService>(onMissingStub: OnMissingStub.returnDefault),
+// @stacked-mock-spec
   ],
 )
 void registerServices() {
   getAndRegisterNavigationService();
   getAndRegisterBottomSheetService();
   getAndRegisterDialogService();
-  // @stacked-mock-register
+
+  getAndRegisterBookService();
+  getAndRegisterAuthorService();
+// @stacked-mock-register
 }
 
 MockNavigationService getAndRegisterNavigationService() {
@@ -76,6 +85,19 @@ MockDialogService getAndRegisterDialogService() {
   return service;
 }
 
+MockBookService getAndRegisterBookService() {
+  _removeRegistrationIfExists<BookService>();
+  final service = MockBookService();
+  locator.registerSingleton<BookService>(service);
+  return service;
+}
+
+MockAuthorService getAndRegisterAuthorService() {
+  _removeRegistrationIfExists<AuthorService>();
+  final service = MockAuthorService();
+  locator.registerSingleton<AuthorService>(service);
+  return service;
+}
 // @stacked-mock-create
 
 void _removeRegistrationIfExists<T extends Object>() {

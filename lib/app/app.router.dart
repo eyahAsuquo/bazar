@@ -5,9 +5,12 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:bazar/ui/models/author_model.dart' as _i26;
+import 'package:bazar/ui/models/author_model.dart' as _i31;
+import 'package:bazar/ui/views/all_cat_tab/all_cat_tab_view.dart' as _i26;
 import 'package:bazar/ui/views/author/author_view.dart' as _i22;
 import 'package:bazar/ui/views/authors/authors_view.dart' as _i21;
+import 'package:bazar/ui/views/category/category_view.dart' as _i25;
+import 'package:bazar/ui/views/confirm_order/confirm_order_view.dart' as _i27;
 import 'package:bazar/ui/views/email_verification/email_verification_view.dart'
     as _i8;
 import 'package:bazar/ui/views/forget_password_screens/f_p_create_new_password/f_p_create_new_password_view.dart'
@@ -27,6 +30,7 @@ import 'package:bazar/ui/views/forget_password_screens/forget_password/forget_pa
 import 'package:bazar/ui/views/home/home_view.dart' as _i19;
 import 'package:bazar/ui/views/input_phone_number/input_phone_number_view.dart'
     as _i10;
+import 'package:bazar/ui/views/menu_search/menu_search_view.dart' as _i28;
 import 'package:bazar/ui/views/onboarding/onboarding_i/onboarding_i_view.dart'
     as _i2;
 import 'package:bazar/ui/views/onboarding/onboarding_i_i/onboarding_i_i_view.dart'
@@ -36,6 +40,7 @@ import 'package:bazar/ui/views/onboarding/onboarding_i_i_i/onboarding_i_i_i_view
 import 'package:bazar/ui/views/page_view/page_view_view.dart' as _i5;
 import 'package:bazar/ui/views/phone_verification/phone_verification_view.dart'
     as _i9;
+import 'package:bazar/ui/views/set_location/set_location_view.dart' as _i29;
 import 'package:bazar/ui/views/sign_in/sign_in_view.dart' as _i6;
 import 'package:bazar/ui/views/sign_up/sign_up_view.dart' as _i7;
 import 'package:bazar/ui/views/success/success_view.dart' as _i11;
@@ -44,10 +49,10 @@ import 'package:bazar/ui/views/tabBar_views/all_authors_tab/all_authors_tab_view
 import 'package:bazar/ui/views/tabBar_views/all_vendor/all_vendor_view.dart'
     as _i23;
 import 'package:bazar/ui/views/vendors/vendors_view.dart' as _i20;
-import 'package:flutter/material.dart' as _i25;
+import 'package:flutter/material.dart' as _i30;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i27;
+import 'package:stacked_services/stacked_services.dart' as _i32;
 
 class Routes {
   static const onboardingIView = '/onboarding-iView';
@@ -96,6 +101,16 @@ class Routes {
 
   static const allAuthorsTabView = '/all-authors-tab-view';
 
+  static const categoryView = '/category-view';
+
+  static const allCatTabView = '/all-cat-tab-view';
+
+  static const confirmOrderView = '/confirm-order-view';
+
+  static const menuSearchView = '/menu-search-view';
+
+  static const setLocationView = '/set-location-view';
+
   static const all = <String>{
     onboardingIView,
     onboardingIIView,
@@ -120,6 +135,11 @@ class Routes {
     authorView,
     allVendorView,
     allAuthorsTabView,
+    categoryView,
+    allCatTabView,
+    confirmOrderView,
+    menuSearchView,
+    setLocationView,
   };
 }
 
@@ -217,126 +237,146 @@ class StackedRouter extends _i1.RouterBase {
       Routes.allAuthorsTabView,
       page: _i24.AllAuthorsTabView,
     ),
+    _i1.RouteDef(
+      Routes.categoryView,
+      page: _i25.CategoryView,
+    ),
+    _i1.RouteDef(
+      Routes.allCatTabView,
+      page: _i26.AllCatTabView,
+    ),
+    _i1.RouteDef(
+      Routes.confirmOrderView,
+      page: _i27.ConfirmOrderView,
+    ),
+    _i1.RouteDef(
+      Routes.menuSearchView,
+      page: _i28.MenuSearchView,
+    ),
+    _i1.RouteDef(
+      Routes.setLocationView,
+      page: _i29.SetLocationView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.OnboardingIView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.OnboardingIView(),
         settings: data,
       );
     },
     _i3.OnboardingIIView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.OnboardingIIView(),
         settings: data,
       );
     },
     _i4.OnboardingIIIView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OnboardingIIIView(),
         settings: data,
       );
     },
     _i5.PageViewView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.PageViewView(),
         settings: data,
       );
     },
     _i6.SignInView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.SignInView(),
         settings: data,
       );
     },
     _i7.SignUpView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SignUpView(),
         settings: data,
       );
     },
     _i8.EmailVerificationView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.EmailVerificationView(),
         settings: data,
       );
     },
     _i9.PhoneVerificationView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.PhoneVerificationView(),
         settings: data,
       );
     },
     _i10.InputPhoneNumberView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.InputPhoneNumberView(),
         settings: data,
       );
     },
     _i11.SuccessView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.SuccessView(),
         settings: data,
       );
     },
     _i12.ForgetPasswordView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.ForgetPasswordView(),
         settings: data,
       );
     },
     _i13.FPWEmailView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.FPWEmailView(),
         settings: data,
       );
     },
     _i14.FPWPhoneView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.FPWPhoneView(),
         settings: data,
       );
     },
     _i15.FPVerificationCodeEmailView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.FPVerificationCodeEmailView(),
         settings: data,
       );
     },
     _i16.FPVerificationCodePhoneView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.FPVerificationCodePhoneView(),
         settings: data,
       );
     },
     _i17.FPCreateNewPasswordView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.FPCreateNewPasswordView(),
         settings: data,
       );
     },
     _i18.FPSuccessNewPasswordView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.FPSuccessNewPasswordView(),
         settings: data,
       );
     },
     _i19.HomeView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i19.HomeView(),
         settings: data,
       );
     },
     _i20.VendorsView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i20.VendorsView(),
         settings: data,
       );
     },
     _i21.AuthorsView: (data) {
       final args = data.getArgs<AuthorsViewArguments>(nullOk: false);
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i21.AuthorsView(key: args.key, authors: args.authors),
         settings: data,
@@ -344,23 +384,53 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i22.AuthorView: (data) {
       final args = data.getArgs<AuthorViewArguments>(nullOk: false);
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i22.AuthorView(key: args.key, author: args.author),
         settings: data,
       );
     },
     _i23.AllVendorView: (data) {
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) => const _i23.AllVendorView(),
         settings: data,
       );
     },
     _i24.AllAuthorsTabView: (data) {
       final args = data.getArgs<AllAuthorsTabViewArguments>(nullOk: false);
-      return _i25.MaterialPageRoute<dynamic>(
+      return _i30.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i24.AllAuthorsTabView(key: args.key, authors: args.authors),
+        settings: data,
+      );
+    },
+    _i25.CategoryView: (data) {
+      return _i30.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i25.CategoryView(),
+        settings: data,
+      );
+    },
+    _i26.AllCatTabView: (data) {
+      return _i30.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i26.AllCatTabView(),
+        settings: data,
+      );
+    },
+    _i27.ConfirmOrderView: (data) {
+      return _i30.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i27.ConfirmOrderView(),
+        settings: data,
+      );
+    },
+    _i28.MenuSearchView: (data) {
+      return _i30.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i28.MenuSearchView(),
+        settings: data,
+      );
+    },
+    _i29.SetLocationView: (data) {
+      return _i30.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i29.SetLocationView(),
         settings: data,
       );
     },
@@ -379,9 +449,9 @@ class AuthorsViewArguments {
     required this.authors,
   });
 
-  final _i25.Key? key;
+  final _i30.Key? key;
 
-  final List<_i26.Author> authors;
+  final List<_i31.Author> authors;
 
   @override
   String toString() {
@@ -406,9 +476,9 @@ class AuthorViewArguments {
     required this.author,
   });
 
-  final _i25.Key? key;
+  final _i30.Key? key;
 
-  final _i26.Author author;
+  final _i31.Author author;
 
   @override
   String toString() {
@@ -433,9 +503,9 @@ class AllAuthorsTabViewArguments {
     required this.authors,
   });
 
-  final _i25.Key? key;
+  final _i30.Key? key;
 
-  final List<_i26.Author> authors;
+  final List<_i31.Author> authors;
 
   @override
   String toString() {
@@ -454,7 +524,7 @@ class AllAuthorsTabViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i27.NavigationService {
+extension NavigatorStateExtension on _i32.NavigationService {
   Future<dynamic> navigateToOnboardingIView([
     int? routerId,
     bool preventDuplicates = true,
@@ -722,8 +792,8 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }
 
   Future<dynamic> navigateToAuthorsView({
-    _i25.Key? key,
-    required List<_i26.Author> authors,
+    _i30.Key? key,
+    required List<_i31.Author> authors,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -739,8 +809,8 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }
 
   Future<dynamic> navigateToAuthorView({
-    _i25.Key? key,
-    required _i26.Author author,
+    _i30.Key? key,
+    required _i31.Author author,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -770,8 +840,8 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }
 
   Future<dynamic> navigateToAllAuthorsTabView({
-    _i25.Key? key,
-    required List<_i26.Author> authors,
+    _i30.Key? key,
+    required List<_i31.Author> authors,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -780,6 +850,76 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }) async {
     return navigateTo<dynamic>(Routes.allAuthorsTabView,
         arguments: AllAuthorsTabViewArguments(key: key, authors: authors),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToCategoryView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.categoryView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToAllCatTabView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.allCatTabView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToConfirmOrderView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.confirmOrderView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToMenuSearchView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.menuSearchView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToSetLocationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.setLocationView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -1053,8 +1193,8 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }
 
   Future<dynamic> replaceWithAuthorsView({
-    _i25.Key? key,
-    required List<_i26.Author> authors,
+    _i30.Key? key,
+    required List<_i31.Author> authors,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1070,8 +1210,8 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }
 
   Future<dynamic> replaceWithAuthorView({
-    _i25.Key? key,
-    required _i26.Author author,
+    _i30.Key? key,
+    required _i31.Author author,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1101,8 +1241,8 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }
 
   Future<dynamic> replaceWithAllAuthorsTabView({
-    _i25.Key? key,
-    required List<_i26.Author> authors,
+    _i30.Key? key,
+    required List<_i31.Author> authors,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -1111,6 +1251,76 @@ extension NavigatorStateExtension on _i27.NavigationService {
   }) async {
     return replaceWith<dynamic>(Routes.allAuthorsTabView,
         arguments: AllAuthorsTabViewArguments(key: key, authors: authors),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithCategoryView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.categoryView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAllCatTabView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.allCatTabView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithConfirmOrderView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.confirmOrderView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithMenuSearchView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.menuSearchView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSetLocationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.setLocationView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

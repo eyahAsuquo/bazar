@@ -27,6 +27,14 @@ import 'package:bazar/ui/views/author/author_view.dart';
 import 'package:bazar/ui/views/tabBar_views/all_vendor/all_vendor_view.dart';
 
 import 'package:bazar/ui/views/tabBar_views/all_authors_tab/all_authors_tab_view.dart';
+import 'package:bazar/ui/views/category/category_view.dart';
+import 'package:bazar/ui/views/all_cat_tab/all_cat_tab_view.dart';
+import 'package:bazar/ui/views/confirm_order/confirm_order_view.dart';
+import 'package:bazar/ui/views/menu_search/menu_search_view.dart';
+import 'package:bazar/ui/views/set_location/set_location_view.dart';
+
+import 'package:bazar/services/book_service.dart';
+import 'package:bazar/services/author_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -57,13 +65,21 @@ import 'package:bazar/ui/views/tabBar_views/all_authors_tab/all_authors_tab_view
     MaterialRoute(page: AllVendorView),
 
     MaterialRoute(page: AllAuthorsTabView),
+    MaterialRoute(page: CategoryView),
+    MaterialRoute(page: AllCatTabView),
+    MaterialRoute(page: ConfirmOrderView),
+    MaterialRoute(page: MenuSearchView),
+    MaterialRoute(page: SetLocationView),
 // @stacked-route
   ],
   dependencies: [
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    // @stacked-service
+
+    LazySingleton(classType: BookService),
+    LazySingleton(classType: AuthorService),
+// @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),
