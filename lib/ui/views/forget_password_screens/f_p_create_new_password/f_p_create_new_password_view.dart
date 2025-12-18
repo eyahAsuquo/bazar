@@ -55,10 +55,10 @@ class FPCreateNewPasswordView
                     verticalSpaceTiny,
                     TextForm(
                       suffixIcon: IconButton(
-                        onPressed: () => viewModel.goToFPSuccessPage(),
+                        onPressed: () => viewModel.showPassword(),
                         icon: viewModel.obscureText
-                            ? const Icon(Icons.visibility)
-                            : const Icon(Icons.visibility_off),
+                            ? const Icon(Icons.visibility_off)
+                            : const Icon(Icons.visibility),
                       ),
                       hintText: "Your Password",
                       obscureText: viewModel.obscureText,
@@ -67,25 +67,17 @@ class FPCreateNewPasswordView
                         if (value == null || value.isEmpty) {
                           return "Please enter your password";
                         }
-                        if (value < 8) {
+                        if (value.length < 8) {
                           return "password must be 8 in length";
                         }
-                        if (!value.contains("0") ||
-                            !value.contains("1") ||
-                            !value.contains("2") ||
-                            !value.contains("3") ||
-                            !value.contains("4") ||
-                            !value.contains("5") ||
-                            !value.contains("6") ||
-                            !value.contains("7") ||
-                            !value.contains("8") ||
-                            !value.contains("9")) {
-                          return "Password must contain a number";
+                        if (!value
+                            .split('')
+                            .any((c) => '0123456789'.contains(c))) {
+                          return "Password must include at least one number";
                         }
-                        if (!value.contains("!") ||
-                            !value.contains("@") ||
-                            !value.contains("#") ||
-                            !value.contains("%")) {
+                        if (!value
+                            .split('')
+                            .any((c) => "!@#%'\$'".contains(c))) {
                           return "Password must contain atleast '!, @, # or '\$'";
                         }
                         return null;
@@ -104,16 +96,16 @@ class FPCreateNewPasswordView
                     verticalSpaceTiny,
                     TextForm(
                       validator: (value) {
-                        if (value == viewModel.passwordControler.text) {
+                        if (value != viewModel.passwordControler.text) {
                           return "Password mismatch";
                         }
                         return null;
                       },
                       suffixIcon: IconButton(
-                        onPressed: () => viewModel.goToFPSuccessPage(),
+                        onPressed: () => viewModel.showPassword(),
                         icon: viewModel.obscureText
-                            ? const Icon(Icons.visibility)
-                            : const Icon(Icons.visibility_off),
+                            ? const Icon(Icons.visibility_off)
+                            : const Icon(Icons.visibility),
                       ),
                       hintText: "Your Password",
                       obscureText: viewModel.obscureText,
